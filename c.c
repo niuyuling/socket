@@ -8,12 +8,15 @@
 #define PORT 9606
 #define BUFFER_SIZE 1024
 
+extern char help(void);
+
 int main(int argc, char *argv[])
 {
     char *IP = argv[1];
     char *buffer = argv[2];
 	
     if(IP == NULL || buffer == NULL) {
+        help();
         exit(0);
     }
 
@@ -25,11 +28,12 @@ int main(int argc, char *argv[])
     serv_addr.sin_port = htons(PORT);                       //端口
     connect(sock, (struct sockaddr *) &serv_addr, sizeof(serv_addr));
 
-	send(sock, buffer, BUFFER_SIZE, 0);
+    send(sock, buffer, BUFFER_SIZE, 0);
 
     if (buffer[0] == '-' && buffer[1] == 'f') {
         int l = strlen(buffer);
-        for (int i = 0; i < l || buffer[i] == '\0'; i++) {
+        int i;
+        for (i = 0; i < l || buffer[i] == '\0'; i++) {
             buffer[i] = buffer[i + 3]; 
         }
         char *parameter;
