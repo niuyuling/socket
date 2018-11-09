@@ -264,3 +264,239 @@ var
  3249 ?        S      0:00 ./s -d
  3250 ?        S      0:00 sh -c ps -ax
  3251 ?        R      0:00 ps -ax
+c
+c.c
+c_help.c
+conf
+config.c
+LICENSE
+log
+Makefile
+pid
+popen.c
+README.md
+s
+s.c
+s_daemon.c
+s_help.c
+VERSION
+c
+c.c
+c_help.c
+conf
+config.c
+LICENSE
+log
+Makefile
+pid
+popen.c
+README.md
+s
+s.c
+s_daemon.c
+s_help.c
+VERSION
+c
+c.c
+c_help.c
+conf
+config.c
+LICENSE
+log
+Makefile
+pid
+popen.c
+README.md
+s
+s.c
+s_daemon.c
+s_help.c
+VERSION
+c
+c.c
+c_help.c
+conf
+config.c
+cproxy_daemon.c
+LICENSE
+log
+Makefile
+pid
+popen.c
+README.md
+s
+s.c
+s_daemon.c
+s_help.c
+VERSION
+c
+c.c
+c_help.c
+conf
+config.c
+cproxy_daemon.c
+LICENSE
+log
+Makefile
+pid
+popen.c
+README.md
+s
+s.c
+s_daemon.c
+s_help.c
+VERSION
+c
+c.c
+c_help.c
+conf
+config.c
+cproxy_daemon.c
+LICENSE
+log
+Makefile
+pid
+popen.c
+README.md
+s
+s.c
+s_daemon.c
+s_help.c
+VERSION
+c
+c.c
+c_help.c
+conf
+config.c
+cproxy_daemon.c
+LICENSE
+log
+Makefile
+pid
+popen.c
+README.md
+s
+s.c
+s_daemon.c
+s_help.c
+VERSION
+c
+c.c
+c_help.c
+conf
+config.c
+cproxy_daemon.c
+LICENSE
+log
+Makefile
+pid
+popen.c
+README.md
+s
+s.c
+s_daemon.c
+s_help.c
+VERSION
+c
+c.c
+c_help.c
+conf
+config.c
+cproxy_daemon.c
+LICENSE
+log
+Makefile
+pid
+popen.c
+README.md
+s
+s.c
+s_daemon.c
+s_help.c
+VERSION
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+uid=0(root) gid=0(root) 组=0(root)
+a.c
+a.out
+c
+c.c
+c_help.c
+conf
+config.c
+cproxy_daemon.c
+LICENSE
+log
+Makefile
+pid
+popen.c
+README.md
+s
+s.c
+s_daemon.c
+s_help.c
+VERSION
+a.c
+a.out
+c
+c.c
+c_help.c
+conf
+config.c
+cproxy_daemon.c
+LICENSE
+log
+Makefile
+pid
+popen.c
+README.md
+s
+s.c
+s_daemon.c
+s_help.c
+VERSION
+我
+我
+c
+c.c
+c_help.c
+conf
+config.c
+cproxy_daemon.c
+LICENSE
+log
+Makefile
+pid
+popen.c
+README.md
+s
+s.c
+s_daemon.c
+s_help.c
+VERSION
+c	  conf		   LICENSE   pid	s	    s_help.c
+c.c	  config.c	   log	     popen.c	s.c	    VERSION
+c_help.c  cproxy_daemon.c  Makefile  README.md	s_daemon.c

@@ -8,8 +8,7 @@
 #include    <stdlib.h>
 #include    <sys/wait.h>
 #include    <errno.h>
-#include    <fcntl.h>
-//#include    "ourhdr.h" 
+#include    <fcntl.h> 
 #include    <sys/resource.h>
 #define CPID "pid/cprocess.pid"
     
@@ -87,7 +86,7 @@ _popen(const char *cmdstring, const char *type)
                 close(i);    
     
         execl(SHELL, "sh", "-c", cmdstring, (char *) 0);    
-        _exit(127);    
+        exit(127);
     }    
                                 /* parent */    
     if (*type == 'r') {    
@@ -104,7 +103,7 @@ _popen(const char *cmdstring, const char *type)
 }    
     
 int    
-_pclose(FILE *fp)    
+_pclose(FILE *fp)
 {    
     
     int     fd, stat;    

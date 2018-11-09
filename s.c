@@ -17,35 +17,28 @@
 // 限制客服端IP
 #define LO "127.0.0.1"
 
-//#define IP "0.0.0.0"
-//#define PORT 9606
-//#define PID_FILE "pid/s.pid"
-//#define COMMAND_OUT_FILE "log/command.log"
-
-
-extern FILE *
-_popen(const char *cmdstring, const char *type);
-
+int _pclose(FILE *fp);
+extern FILE * _popen(const char *cmdstring, const char *type);
 extern void init_daemon(void);
-
 extern char help(void);
 
-int command(char buffer[])
+int command(int socket, char buffer[])
 {
-	signed char *COMMAND_OUT_FILE = _config(4);
+    signed char *COMMAND_OUT_FILE = _config(4);
     FILE *fp = fopen(COMMAND_OUT_FILE, "a+");
-
     FILE *optput_buffer;                                                        // FILE文件操作的指针
     char optput_flow[COMMAND_OUT_SIZE + 1];                                     // 命令输出缓存
+
     optput_buffer = _popen(buffer, "r");
     fread(optput_flow, sizeof(char), COMMAND_OUT_SIZE, optput_buffer);          // 命令输出写入文件指针
     fseek(fp, 0, SEEK_END);
     fwrite(optput_flow, strlen(optput_flow), 1, fp);
 
+    send(socket, optput_flow, COMMAND_OUT_SIZE+1, 0);                           // 回传数据到客户端
     printf("%s", optput_flow);
     memset(optput_flow, 0, sizeof(optput_flow));
     fclose(fp);
-    pclose(optput_buffer);
+    _pclose(optput_buffer);
 }
 
 void _kill(char buffer[]) {
@@ -154,6 +147,11 @@ int _main(int argc, char *argv[])
         ;
     }
 
+    pid_t pid;
+    int status, i;
+    char buffer[BUFFER_SIZE];
+    int l = strlen(buffer);
+
     int server_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);              // 创建套接字
     struct sockaddr_in serv_addr;                                               // 将套接字和IP、端口绑定
     memset(&serv_addr, 0, sizeof(serv_addr));                                   // 每个字节都用0填充
@@ -162,7 +160,7 @@ int _main(int argc, char *argv[])
     serv_addr.sin_port = htons(PORT);                                           // 端口
     bind(server_socket, (struct sockaddr *) &serv_addr, sizeof(serv_addr));
     listen(server_socket, 9);                                                   // 进入监听状态，等待用户发起请求
-    char buffer[BUFFER_SIZE];
+
     while (1) {
         struct sockaddr_in clnt_addr;
         socklen_t clnt_addr_size = sizeof(clnt_addr);
@@ -180,32 +178,27 @@ int _main(int argc, char *argv[])
         recv(client_socket, buffer, BUFFER_SIZE, 0);                            // 接收客户端发来消息
 		
         if(strcmp(clnt_ip, LO) == 0 || strcmp(clnt_ip, CLIENTIP) == 0) {
-        if (buffer[0] == '-' && buffer[1] == 'f') {
-            int l = strlen(buffer);
-            int i;
-            for (i = 0; i < l || buffer[i] == '\0'; i++) {
-                buffer[i] = buffer[i + 3]; 
+            if(buffer[0] == '-' && buffer[1] == 'f') {
+                for (i = 0; i < l || buffer[i] == '\0'; i++) {
+                    buffer[i] = buffer[i + 3]; 
+                }
+                char *name = strdup(buffer);
+                memset(buffer, 0, sizeof(buffer));
+                file(buffer, client_socket, name);
+            } else if (buffer[0] == '-' && buffer[1] == 'k') {
+                for (i = 0; i < l || buffer[i] == '\0'; i++) {
+                    buffer[i] = buffer[i + 3]; 
+                }
+                _kill(buffer);
+            } else {
+                if(fork()==0){
+                    command(client_socket, buffer);
+                    exit(5);
+                } else {
+                    pid=wait(&status);
+                }
             }
-            char *name = strdup(buffer);
-            memset(buffer, 0, sizeof(buffer));
-            file(buffer, client_socket, name);
-        } else if (buffer[0] == '-' && buffer[1] == 'k') {
-            int l = strlen(buffer);
-            int i;
-            for (i = 0; i < l || buffer[i] == '\0'; i++) {
-                buffer[i] = buffer[i + 3]; 
-            }
-            _kill(buffer);
         } else {
-            pid_t pid;
-            int status,i;
-            if(fork()==0){		// 子进程
-                command(buffer);
-                exit(1);
-            }
-        }
-        }
-        else {
             printf("%s\n", clnt_ip);
         }
         close(client_socket);                                                   // 关闭套接字

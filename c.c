@@ -14,7 +14,13 @@ int main(int argc, char *argv[])
 {
     char *IP = argv[1];
     char *buffer = argv[2];
-	
+    int l = strlen(buffer);
+    int i;
+    char *parameter;
+    parameter = "-f";
+    int length = 0;
+    int allCount = 0;
+
     if(IP == NULL || buffer == NULL) {
         help();
         exit(0);
@@ -31,13 +37,10 @@ int main(int argc, char *argv[])
     send(sock, buffer, BUFFER_SIZE, 0);
 
     if (buffer[0] == '-' && buffer[1] == 'f') {
-        int l = strlen(buffer);
-        int i;
         for (i = 0; i < l || buffer[i] == '\0'; i++) {
             buffer[i] = buffer[i + 3]; 
         }
-        char *parameter;
-        parameter = "-f";
+
         printf("%s\n", buffer);                             //打印文件名字
 
         FILE *fp = fopen(buffer, "r");
@@ -45,8 +48,6 @@ int main(int argc, char *argv[])
             printf("File: %s Not Found\n", buffer);
         } else {
             bzero(buffer, BUFFER_SIZE);
-            int length = 0;
-            int allCount = 0;
             // 每读取一段数据，便将其发送给客户端，循环直到文件读完为止
             while ((length =
                 (int) fread(buffer, sizeof(char), BUFFER_SIZE,
@@ -66,7 +67,11 @@ int main(int argc, char *argv[])
         send(sock, buffer, BUFFER_SIZE, 0);
         printf("%s\n", buffer);
         memset(buffer, 0, sizeof(buffer));
+
+        recv(sock, buffer, BUFFER_SIZE, 0);                 // 接收服务端发来的buffer
+        printf("%s", buffer);
     }
+
     close(sock);                                            //关闭套接字
     return 0;
 }
