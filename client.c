@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
     char *buffer = argv[2];
     int l = strlen(buffer);
     int i;
+	char file_name[l];
     char *parameter;
     parameter = "-f";
     int length = 0;
@@ -42,10 +43,11 @@ int main(int argc, char *argv[])
         }
 
         printf("%s\n", buffer);                             //打印文件名字
+        sprintf(file_name, "%s", buffer);
 
         FILE *fp = fopen(buffer, "r");
         if (NULL == fp) {
-            printf("File: %s Not Found\n", buffer);
+            printf("File: %s Not Found\n", file_name);
         } else {
             bzero(buffer, BUFFER_SIZE);
             // 每读取一段数据，便将其发送给客户端，循环直到文件读完为止
@@ -53,14 +55,14 @@ int main(int argc, char *argv[])
                 (int) fread(buffer, sizeof(char), BUFFER_SIZE,
                     fp)) > 0) {
                 if (send(sock, buffer, length, 0) < 0) {
-                    printf("Send File:%s Failed./n", buffer);
+                    printf("Send File:%s Failed./n", file_name);
                     break;
                 }
                 allCount++;
                 bzero(buffer, BUFFER_SIZE);
             }
             fclose(fp);		// 关闭文件
-            printf("File: %s Transfer Successful! Total: %dK\n", buffer,
+            printf("File: %s Transfer Successful! Total: %dK\n", file_name,
             allCount);
         }
     } else {

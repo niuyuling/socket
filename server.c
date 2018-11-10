@@ -8,7 +8,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <signal.h>
-#include "config.c"
+#include "server_config.c"
 
 
 #define COMMAND_OUT_SIZE 1024000

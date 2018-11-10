@@ -1,8 +1,8 @@
 cc = gcc
 s = s
 c = c
-s_source = s_help.c s_daemon.c popen.c s.c
-c_source = c_help.c c.c
+s_source = server_help.c server_daemon.c popen.c server.c
+c_source = client_help.c client.c
 
 all: $(s) $(c)
 
