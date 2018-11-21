@@ -500,3 +500,128 @@ VERSION
 c	  conf		   LICENSE   pid	s	    s_help.c
 c.c	  config.c	   log	     popen.c	s.c	    VERSION
 c_help.c  cproxy_daemon.c  Makefile  README.md	s_daemon.c
+c
+client.c
+client_help.c
+conf
+LICENSE
+log
+Makefile
+pid
+popen.c
+README.md
+s
+server.c
+server_config.c
+server_daemon.c
+server_help.c
+VERSION
+c
+client.c
+client_help.c
+conf
+LICENSE
+log
+Makefile
+pid
+popen.c
+README.md
+s
+server.c
+server_config.c
+server_daemon.c
+server_help.c
+VERSION
+a.txt	  client_help.c  log	   popen.c    server.c	       server_help.c
+c	  conf		 Makefile  README.md  server_config.c  VERSION
+client.c  LICENSE	 pid	   s	      server_daemon.c
+a.out
+a.txt
+c
+client.c
+client_help.c
+conf
+LICENSE
+log
+Makefile
+pid
+popen.c
+README.md
+s
+server.c
+server_config.c
+server_daemon.c
+server_help.c
+VERSION
+eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.188.1  netmask 255.255.255.0  broadcast 192.168.188.255
+        inet6 fe80::c00d:abb1:a640:f915  prefixlen 64  scopeid 0xfd<compat,link,site,host>
+        ether 00:50:56:c0:00:01  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth2: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.71.1  netmask 255.255.255.0  broadcast 192.168.71.255
+        inet6 fe80::b5da:23af:747c:91f4  prefixlen 64  scopeid 0xfd<compat,link,site,host>
+        ether 00:50:56:c0:00:08  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 1500
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0xfe<compat,link,site,host>
+        loop  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wifi0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.89  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::d9c5:574e:53ce:8734  prefixlen 64  scopeid 0xfd<compat,link,site,host>
+        ether 08:d4:0c:df:f7:8c  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.188.1  netmask 255.255.255.0  broadcast 192.168.188.255
+        inet6 fe80::c00d:abb1:a640:f915  prefixlen 64  scopeid 0xfd<compat,link,site,host>
+        ether 00:50:56:c0:00:01  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth2: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.71.1  netmask 255.255.255.0  broadcast 192.168.71.255
+        inet6 fe80::b5da:23af:747c:91f4  prefixlen 64  scopeid 0xfd<compat,link,site,host>
+        ether 00:50:56:c0:00:08  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 1500
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0xfe<compat,link,site,host>
+        loop  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wifi0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.89  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::d9c5:574e:53ce:8734  prefixlen 64  scopeid 0xfd<compat,link,site,host>
+        ether 08:d4:0c:df:f7:8c  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+

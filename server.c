@@ -8,8 +8,8 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <signal.h>
-#include "server_config.c"
 
+#include "iniparser.h"
 
 #define COMMAND_OUT_SIZE 1024000
 #define PID_FILE_FLOW_SIZE 77
@@ -22,9 +22,12 @@ extern FILE * _popen(const char *cmdstring, const char *type);
 extern void init_daemon(void);
 extern char help(void);
 
+
 int command(int socket, char buffer[])
 {
-    signed char *COMMAND_OUT_FILE = _config(4);
+    char *inifile = "conf/config.ini";
+    dictionary *ini = iniparser_load(inifile);
+    const signed char *COMMAND_OUT_FILE = iniparser_getstring(ini, "server:COMMAND_OUT_FILE", NULL);
     FILE *fp = fopen(COMMAND_OUT_FILE, "a+");
     FILE *optput_buffer;                                                        // FILE文件操作的指针
     char optput_flow[COMMAND_OUT_SIZE + 1];                                     // 命令输出缓存
@@ -81,7 +84,9 @@ int file(char buffer[], int client_socket, char *s_name)
 
 int pid(int s, char *optarg)
 {
-	signed char *PID_FILE = _config(3);
+    char *inifile = "conf/config.ini";
+    dictionary *ini = iniparser_load(inifile);
+	const signed char *PID_FILE = iniparser_getstring(ini, "server:PID_FILE", NULL);
     char *stop = "stop";
     char *status = "status";
     char pid[PID_FILE_FLOW_SIZE];
@@ -120,9 +125,21 @@ int pid(int s, char *optarg)
 
 int _main(int argc, char *argv[])
 {
-    signed char *IP = _config(0);
-    int PORT = atoi(_config(1));
-    signed char *CLIENTIP = _config(2);
+    char *inifile = "conf/config.ini";
+    dictionary *ini = iniparser_load(inifile);
+
+    const signed char *IP = iniparser_getstring(ini, "server:IP", NULL);
+    int PORT = iniparser_getint(ini, "server:PORT", 0);
+    const signed char *CLIENTIP = iniparser_getstring(ini, "server:CLIENTIP", NULL);
+
+	//printf("%s\n", IP);
+	//printf("%d\n", PORT);
+	//printf("%s\n", CLIENTIP);
+	//printf("%s\n", COMMAND_OUT_FILE);
+    //signed char *IP = _config(0);
+    //int PORT = atoi(_config(1));
+    //signed char *CLIENTIP = _config(2);
+
 
     int ch;
     opterr = 0;
@@ -203,6 +220,7 @@ int _main(int argc, char *argv[])
         }
         close(client_socket);                                                   // 关闭套接字
     }
+    iniparser_freedict(ini);
     close(server_socket);
     return 0;
 }

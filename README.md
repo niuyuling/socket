@@ -15,3 +15,11 @@
         -?,-h     : this help
         -f file   : Transfer file
         -k pid    : Child process PID
+
+# 编译
+    git clone https://github.com/niuyuling/socket.git
+    git clone https://github.com/ndevilla/iniparser.git
+    cd iniparser
+    make
+    cd ../socket
+    make clean; make
