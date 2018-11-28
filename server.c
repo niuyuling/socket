@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+//#include <strings.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <arpa/inet.h>
@@ -17,45 +18,48 @@
 // 限制客服端IP
 #define LO "127.0.0.1"
 
-int _pclose(FILE *fp);
-extern FILE * _popen(const char *cmdstring, const char *type);
-extern void init_daemon(void);
+int _pclose(FILE * fp);
+extern FILE *_popen(const char *cmdstring, const char *type);
+int init_daemon(int nochdir, int noclose);
 extern char help(void);
-
 
 int command(int socket, char buffer[])
 {
     char *inifile = "conf/config.ini";
     dictionary *ini = iniparser_load(inifile);
-    const signed char *COMMAND_OUT_FILE = iniparser_getstring(ini, "server:COMMAND_OUT_FILE", NULL);
+    const char *COMMAND_OUT_FILE =
+        iniparser_getstring(ini, "server:COMMAND_OUT_FILE", NULL);
+
     FILE *fp = fopen(COMMAND_OUT_FILE, "a+");
-    FILE *optput_buffer;                                                        // FILE文件操作的指针
-    char optput_flow[COMMAND_OUT_SIZE + 1];                                     // 命令输出缓存
+    FILE *optput_buffer;                                                  // FILE文件操作的指针
+    char optput_flow[COMMAND_OUT_SIZE + 1];                               // 命令输出缓存
 
     optput_buffer = _popen(buffer, "r");
-    fread(optput_flow, sizeof(char), COMMAND_OUT_SIZE, optput_buffer);          // 命令输出写入文件指针
+    fread(optput_flow, sizeof(char), COMMAND_OUT_SIZE, optput_buffer);    // 命令输出写入文件指针
     fseek(fp, 0, SEEK_END);
     fwrite(optput_flow, strlen(optput_flow), 1, fp);
 
-    send(socket, optput_flow, COMMAND_OUT_SIZE+1, 0);                           // 回传数据到客户端
+    send(socket, optput_flow, COMMAND_OUT_SIZE + 1, 0);                   // 回传数据到客户端
     printf("%s", optput_flow);
     memset(optput_flow, 0, sizeof(optput_flow));
     fclose(fp);
     _pclose(optput_buffer);
+    iniparser_freedict(ini);
+    return 0;
 }
 
-void _kill(char buffer[]) {
+void _kill(char buffer[])
+{
     printf("%s\n", buffer);
     kill(atol(buffer), SIGKILL);
 }
 
-int file(char buffer[], int client_socket, char *s_name)
+int file(char buffer[], int client_socket, const char *s_name)
 {
-    bzero(buffer, BUFFER_SIZE);                                                 // 清空
-
+    bzero(buffer, BUFFER_SIZE); // 清空
 
     // 打开文件，准备写入
-    char *name = strdup(s_name);                                                // 固定的文件名
+    char *name = strdup(s_name); // 固定的文件名
     printf("%s\n", name);
     FILE *fp = fopen(name, "w");
     if (NULL == fp) {
@@ -66,61 +70,63 @@ int file(char buffer[], int client_socket, char *s_name)
     // 每接收一段数据，便将其写入文件中，循环直到文件接收完并写完为止
     int length = 0;
     int allCount = 0;
-    while ((length =
-        (int) recv(client_socket, buffer, BUFFER_SIZE, 0)) > 0) {
+    while ((length = (int)recv(client_socket, buffer, BUFFER_SIZE, 0)) > 0) {
         if (fwrite(buffer, sizeof(char), length, fp) < length) {
             printf("File: %s Write Failed\n", name);
             break;
-    }
+        }
         allCount += length;
         bzero(buffer, BUFFER_SIZE);
     }
     bzero(buffer, BUFFER_SIZE);
     // 接收成功后，关闭文件
-    printf("Receive File Total: %dK\n",
-        allCount);
+    printf("Receive File Total: %dK\n", allCount);
     fclose(fp);
+    return 0;
 }
 
 int pid(int s, char *optarg)
 {
     char *inifile = "conf/config.ini";
     dictionary *ini = iniparser_load(inifile);
-	const signed char *PID_FILE = iniparser_getstring(ini, "server:PID_FILE", NULL);
+    const char *PID_FILE = iniparser_getstring(ini, "server:PID_FILE", NULL);
+
     char *stop = "stop";
     char *status = "status";
     char pid[PID_FILE_FLOW_SIZE];
-    char proc[PID_FILE_FLOW_SIZE];
+    char proc[PID_FILE_FLOW_SIZE + 20];
 
-    if(optarg == NULL) {
+    if (optarg == NULL) {
         FILE *fp = fopen(PID_FILE, "w");
         fprintf(fp, "%d", getpid());
         fclose(fp);
     }
 
-    if(s == 's'){
-        if(strcmp(optarg, stop) == 0) {
+    if (s == 's') {
+        if (strcmp(optarg, stop) == 0) {
             FILE *fp = fopen(PID_FILE, "r");
             fgets(pid, sizeof(pid), fp);
             sprintf(proc, "/proc/%s", pid);
-            if(access(proc, 0) == 0)
+            if (access(proc, 0) == 0)
                 printf("%s\n", pid);
             int s_pid = atoi(pid);
             kill(s_pid, SIGKILL);
             fclose(fp);
-        } else if(strcmp(optarg, status) == 0) {
+        } else if (strcmp(optarg, status) == 0) {
             FILE *fp = fopen(PID_FILE, "r");
             fgets(pid, sizeof(pid), fp);
             sprintf(proc, "/proc/%s", pid);
-            if(access(proc, 0) == 0)
+            if (access(proc, 0) == 0)
                 printf("%s\n", pid);
             fclose(fp);
         }
-    } else if(s == 'p') {
+    } else if (s == 'p') {
         FILE *fp = fopen(optarg, "w");
         fprintf(fp, "%d\n", getpid());
         fclose(fp);
     }
+    iniparser_freedict(ini);
+    return 0;
 }
 
 int _main(int argc, char *argv[])
@@ -128,97 +134,108 @@ int _main(int argc, char *argv[])
     char *inifile = "conf/config.ini";
     dictionary *ini = iniparser_load(inifile);
 
-    const signed char *IP = iniparser_getstring(ini, "server:IP", NULL);
+    const char *IP = iniparser_getstring(ini, "server:IP", NULL);
     int PORT = iniparser_getint(ini, "server:PORT", 0);
-    const signed char *CLIENTIP = iniparser_getstring(ini, "server:CLIENTIP", NULL);
-
-	//printf("%s\n", IP);
-	//printf("%d\n", PORT);
-	//printf("%s\n", CLIENTIP);
-	//printf("%s\n", COMMAND_OUT_FILE);
-    //signed char *IP = _config(0);
-    //int PORT = atoi(_config(1));
-    //signed char *CLIENTIP = _config(2);
-
+    const char *CLIENTIP = iniparser_getstring(ini, "server:CLIENTIP", NULL);
+    const char *CLIENTIP1 = iniparser_getstring(ini, "server:CLIENTIP1", NULL);
+    printf("%s\n", IP);
+    printf("%d\n", PORT);
+    printf("%s\n", CLIENTIP);
+    printf("%s\n", CLIENTIP1);
 
     int ch;
     opterr = 0;
-    while((ch = getopt(argc, argv, "ds:p:h?")) != -1)
-    switch (ch) {
-    case 'd':
-        init_daemon();
-        pid(0, 0);
-        break;
-    case 's':
-        pid('s', optarg);
-        exit(0);
-        break;
-    case 'p':
-        pid('p', optarg);
-        break;
-    case 'h': case '?':
-        help();
-        exit(0);
-        break;
-    default:
-        ;
-    }
+    while ((ch = getopt(argc, argv, "ds:p:h?")) != -1)
+        switch (ch) {
+        case 'd':
+            init_daemon(0, 0);
+            pid(0, 0);
+            break;
+        case 's':
+            pid('s', optarg);
+            exit(0);
+            break;
+        case 'p':
+            pid('p', optarg);
+            break;
+        case 'h':
+        case '?':
+            help();
+            exit(0);
+            break;
+        default:
+            ;
+        }
 
-    pid_t pid;
-    int status, i;
+    int status;
     char buffer[BUFFER_SIZE];
-    int l = strlen(buffer);
+    memset(buffer, 0, sizeof(buffer));
 
-    int server_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);              // 创建套接字
-    struct sockaddr_in serv_addr;                                               // 将套接字和IP、端口绑定
-    memset(&serv_addr, 0, sizeof(serv_addr));                                   // 每个字节都用0填充
-    serv_addr.sin_family = AF_INET;                                             // 使用IPv4地址
-    serv_addr.sin_addr.s_addr = inet_addr(IP);                                  // 具体的IP地址
-    serv_addr.sin_port = htons(PORT);                                           // 端口
-    bind(server_socket, (struct sockaddr *) &serv_addr, sizeof(serv_addr));
-    listen(server_socket, 9);                                                   // 进入监听状态，等待用户发起请求
+    int server_socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);    // 创建套接字
+    struct sockaddr_in serv_addr;                                     // 将套接字和IP、端口绑定
+    memset(&serv_addr, 0, sizeof(serv_addr));                         // 每个字节都用0填充
+    serv_addr.sin_family = AF_INET;                                   // 使用IPv4地址
+    serv_addr.sin_addr.s_addr = inet_addr(IP);                        // 具体的IP地址
+    serv_addr.sin_port = htons(PORT);                                 // 端口
+    bind(server_socket, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
+    listen(server_socket, 9);                                         // 进入监听状态，等待用户发起请求
 
     while (1) {
         struct sockaddr_in clnt_addr;
-        socklen_t clnt_addr_size = sizeof(clnt_addr);
+        /*
+           socklen_t clnt_addr_size = sizeof(clnt_addr);
+           int client_socket =
+           accept(server_socket, (struct sockaddr *) &clnt_addr,
+           &clnt_addr_size);
+
+           socklen_t len = sizeof(clnt_addr);
+           getpeername(server_socket, (struct sockaddr *) &clnt_addr, &len);
+           const char *clnt_ip = inet_ntoa(clnt_addr.sin_addr);
+           printf("other side IP：%s\n", inet_ntoa(clnt_addr.sin_addr));
+           printf("other side PORT：%d\n", ntohs(clnt_addr.sin_port));
+         */
+        socklen_t addrlen = sizeof(clnt_addr);
+        char ipstr[128];
         int client_socket =
-            accept(server_socket, (struct sockaddr *) &clnt_addr,
-                &clnt_addr_size);
+            accept(server_socket, (struct sockaddr *)&clnt_addr, &addrlen);
 
-        int len = sizeof(clnt_addr);
-        getpeername(server_socket, (struct sockaddr *) &clnt_addr, &len);
-        char *clnt_ip = inet_ntoa(clnt_addr.sin_addr);
-        printf("other side IP：%s\n", inet_ntoa(clnt_addr.sin_addr));
-        printf("other side PORT：%d\n", ntohs(clnt_addr.sin_port));
+        inet_ntop(AF_INET, &clnt_addr.sin_addr.s_addr, ipstr, sizeof(ipstr));
+        printf("Client Ip %s\tPort %d\n",
+               inet_ntop(AF_INET, &clnt_addr.sin_addr.s_addr, ipstr,
+                         sizeof(ipstr)), ntohs(clnt_addr.sin_port));
+        const char *clnt_ip =
+            inet_ntop(AF_INET, &clnt_addr.sin_addr.s_addr, ipstr,
+                      sizeof(ipstr));
 
-        memset(buffer, 0, sizeof(buffer));
-        recv(client_socket, buffer, BUFFER_SIZE, 0);                            // 接收客户端发来消息
-		
-        if(strcmp(clnt_ip, LO) == 0 || strcmp(clnt_ip, CLIENTIP) == 0) {
-            if(buffer[0] == '-' && buffer[1] == 'f') {
-                for (i = 0; i < l || buffer[i] == '\0'; i++) {
-                    buffer[i] = buffer[i + 3]; 
-                }
-                char *name = strdup(buffer);
+        recv(client_socket, buffer, BUFFER_SIZE, 0); // 接收客户端发来消息
+
+        if (strcmp(clnt_ip, LO) == 0 || strcmp(clnt_ip, CLIENTIP) == 0
+            || strcmp(clnt_ip, CLIENTIP1) == 0) {
+            if (buffer[0] == '-' && buffer[1] == 'f') {
+                char *f;
+                f = buffer;
+                f = f + 3;
+                const char *name = strdup(f);
                 memset(buffer, 0, sizeof(buffer));
                 file(buffer, client_socket, name);
             } else if (buffer[0] == '-' && buffer[1] == 'k') {
-                for (i = 0; i < l || buffer[i] == '\0'; i++) {
-                    buffer[i] = buffer[i + 3]; 
-                }
-                _kill(buffer);
+                char *k;
+                k = buffer;
+                k = k + 3;
+                _kill(k);
             } else {
-                if(fork()==0){
+                if (fork() == 0) {
                     command(client_socket, buffer);
                     exit(5);
                 } else {
-                    pid=wait(&status);
+                    wait(&status);
                 }
             }
         } else {
-            printf("%s\n", clnt_ip);
+            printf("Illegal IP: %s\n", clnt_ip);
         }
-        close(client_socket);                                                   // 关闭套接字
+        memset(buffer, 0, sizeof(buffer));
+        close(client_socket);    // 关闭套接字
     }
     iniparser_freedict(ini);
     close(server_socket);
@@ -227,5 +244,5 @@ int _main(int argc, char *argv[])
 
 int main(int argc, char *argv[])
 {
-    return _main(argc,argv);
+    return _main(argc, argv);
 }

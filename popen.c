@@ -23,6 +23,7 @@ int cpid(char PID[]) {
 	FILE *fp = fopen(pid_file, "w");
 	fprintf(fp, "%d\n", getpid());
 	fclose(fp);
+    return 0;
 }
 
 FILE *    
