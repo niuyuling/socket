@@ -1,27 +1,52 @@
-#include <unistd.h>
-#include <signal.h>
-#include <sys/param.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <signal.h>
 #include <stdlib.h>
 
-void init_daemon(void)
+int init_daemon(int nochdir, int noclose)
 {
-    int pid;
-    if ((pid = fork())) {       // 是父进程, 结束父进程
-        exit(0);
-    } else if (pid < 0) {
-        exit(1);                // fork失败, 退出
-    }
-    // 是第一子进程, 后台继续执行
-    // 第一子进程成为新的会话组长和进程组长
-    setsid();
+    pid_t pid;
 
-    // 并与控制终端分离
-    if ((pid = fork())) {
+    if ((pid = fork()) < 0) {
+        return -1;
+    } else if (0 != pid) {
         exit(0);
-        // 是第一子进程, 结束第一子进程
-    } else if (pid < 0) {
-        exit(1);                // fork失败, 退出
     }
+    //child 1 continues...
+
+    //become session leader
+    if (setsid() < 0) {
+        return -1;
+    }
+
+    signal(SIGHUP, SIG_IGN);
+    if ((pid = fork()) < 0) {
+        return -1;
+    } else if (0 != pid) {
+        exit(0);
+    }
+    //child 2 continues...
+
+    //change working directory
+    if (0 == nochdir) {
+        chdir("/");
+    }
+    //close off file descriptors
+    /*
+       int i;
+       for(i=0; i<64; i++) {
+       close(i);
+       }
+     */
+
+    //redirect stdin,stdout,stderror to "/dev/null"
+    if (0 == noclose) {
+        open("/dev/null", O_RDONLY);
+        open("/dev/null", O_RDWR);
+        open("/dev/null", O_RDWR);
+    }
+
+    return 0;
 }

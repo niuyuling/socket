@@ -1,20 +1,27 @@
 # socket
 简单的socket服务器, 文件传输和远程命令.
 
-    s version 1.0, s
+    s version 1.4, server
     Author: aixiao aixiao@aixiao.me
-    s usage: s [-d] [-s stop|status] [-p pid file] | [-?h]
+    s usage: s [-d] [-s stop|status] [-p pid file] | [-?|h]
 
         -?,-h     : this help
         -d        : daemon
         -s        : signal: stop,status
-        -p,       : pid file(default: s.pid)
+        -p,       : pid file(default: pid/s.pid)
 
-    c usage: c [IP address] & ["-f file | -k pid" | "command"] | [-?h]
+    c version 1.4, client
+    Author: aixiao aixiao@aixiao.me
+    c usage: c [-l Ip Address] & [-p Port] & [-b "-f file" | "-k pid" | "command"] | [-?|h]
 
-        -?,-h     : this help
-        -f file   : Transfer file
-        -k pid    : Child process PID
+        -?|-h Help    : this help
+        -l IP         : Ip Address
+        -p Port       : Port
+        -b Buffer     : send buffer
+                        "-f file : Transfer file"
+                        "-k pid  : Child process PID"
+                        "command : Shell command"
+
 
 # 编译
     git clone https://github.com/niuyuling/socket.git

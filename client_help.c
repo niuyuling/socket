@@ -3,21 +3,25 @@
 char help(void)
 {
     static const char my_name[] = "c";
-    static const char version[] = "version 1.0";
-    static const char subject[] = "c";
+    static const char version[] = "version 1.4";
+    static const char subject[] = "client";
 
     static const struct {
         const char *f, *s, *e;
     } author = {
     "aixiao@aixiao.me", "aixiao", "Author:",};
     static const char usage[] =
-        "usage: c [Ip Address] & [\"-f file | -k pid\" | \"command\"] | [-?|h]";
+        "usage: c [-l Ip Address] & [-p Port] & [-b \"-f file\" | \"-k pid\" | \"command\"] | [-?|h]";
 
     static const char *s_help[] = {
         "",
-        "    -?,-h     : this help",
-        "    -f file   : Transfer file",
-        "    -k pid    : Child process PID",
+        "    -?|-h Help    : this help",
+        "    -l IP         : Ip Address",
+        "    -p Port       : Port",
+        "    -b Buffer     : send buffer",
+        "                    \"-f file : Transfer file\"",
+        "                    \"-k pid  : Child process PID\"",
+        "                    \"command : Shell command\"",
         "",
         "",
         0

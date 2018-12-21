@@ -3,8 +3,8 @@
 char help(void)
 {
     static const char my_name[] = "s";
-    static const char version[] = "version 1.0";
-    static const char subject[] = "s";
+    static const char version[] = "version 1.4";
+    static const char subject[] = "server";
 
     static const struct {
         const char *f, *s, *e;
@@ -18,7 +18,7 @@ char help(void)
         "    -?,-h     : this help",
         "    -d        : daemon",
         "    -s        : signal: stop,status",
-        "    -p,       : pid file(default: conf/s.pid)",
+        "    -p,       : pid file(default: pid/s.pid)",
         "",
         "",
         0
