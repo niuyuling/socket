@@ -4,7 +4,7 @@ c = c
 ERROR = -g -Wall -Werror
 CFLAGS = -I../iniparser/src -L ../iniparser
 LIBS = -liniparser
-s_source = server_help.c server_daemon.c popen.c server.c
+s_source = server_help.c server_daemon.c popen.c server.c conf.c
 SOBJS = $(s_source:.c=.o)
 c_source = client_help.c client.c
 COBJS = $(c_source:.c=.o)

@@ -57,7 +57,8 @@ int main(int argc, char *argv[])
 {
     char *IP = NULL;
     char *PORT = NULL;
-    char buffer[BUFFER_SIZE];
+    char *buffer = (char *)malloc(BUFFER_SIZE);
+    memset(buffer, 0, BUFFER_SIZE);
     int ch;
     opterr = 0;
     while ((ch = getopt(argc, argv, "l:p:b:h?")) != -1) {
@@ -68,9 +69,10 @@ int main(int argc, char *argv[])
         case 'p':
             PORT = strdup(optarg);
             break;
-        case 'b':
-            sprintf(buffer, "%s", optarg);
+        case 'b': {
+            strcpy(buffer, optarg);
             break;
+        }
         case 'h':
         case '?':
             help();
@@ -90,12 +92,6 @@ int main(int argc, char *argv[])
     printf("%s\n", IP);
     printf("%s\n", PORT);
     printf("%s\n", buffer);
-/*
-    char *n = NULL;
-    if ((n = strrchr(buffer, '/')) != NULL) {
-        printf("%s %lu\n", n + 1, strlen(n + 1));
-    }
-*/
 
     int l = strlen(buffer);
     int i;
@@ -116,7 +112,6 @@ int main(int argc, char *argv[])
         printf("Failed to connect to socket.\n");
         exit(3);
     }
-
     if (send(sock, buffer, l, 0) < 0) {
         printf("Failed to send data to socket.\n");
     }
@@ -142,5 +137,6 @@ int main(int argc, char *argv[])
     }
 
     close(sock);                //关闭套接字
+    free(buffer);
     return 0;
 }

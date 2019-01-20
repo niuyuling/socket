@@ -1,872 +1,9 @@
 c
 client.c
 client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-地铁铁线路图.jpg
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-uid=0(root) gid=0(root) 组=0(root)
-uid=0(root) gid=0(root) 组=0(root)
-bin
-boot
-dev
-etc
-home
-init
-lib
-lib32
-lib64
-media
-mnt
-opt
-proc
-root
-run
-sbin
-srv
-sys
-tmp
-usr
-var
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-地铁铁线路图.jpg
-uid=0(root) gid=0(root) 组=0(root)
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-地铁线路图.jpg
-bin
-boot
-dev
-etc
-home
-init
-lib
-lib32
-lib64
-media
-mnt
-opt
-proc
-root
-run
-sbin
-srv
-sys
-tmp
-usr
-var
-bin
-boot
-dev
-etc
-home
-init
-lib
-lib32
-lib64
-media
-mnt
-opt
-proc
-root
-run
-sbin
-srv
-sys
-tmp
-usr
-var
-bin
-boot
-dev
-etc
-home
-init
-lib
-lib32
-lib64
-media
-mnt
-opt
-proc
-root
-run
-sbin
-srv
-sys
-tmp
-usr
-var
-bin
-boot
-dev
-etc
-home
-init
-lib
-lib32
-lib64
-media
-mnt
-opt
-proc
-root
-run
-sbin
-srv
-sys
-tmp
-usr
-var
-bin
-boot
-dev
-etc
-home
-init
-lib
-lib32
-lib64
-media
-mnt
-opt
-proc
-root
-run
-sbin
-srv
-sys
-tmp
-usr
-var
-bin
-boot
-dev
-etc
-home
-init
-lib
-lib32
-lib64
-media
-mnt
-opt
-proc
-root
-run
-sbin
-srv
-sys
-tmp
-usr
-var
-bin
-boot
-dev
-etc
-home
-init
-lib
-lib32
-lib64
-media
-mnt
-opt
-proc
-root
-run
-sbin
-srv
-sys
-tmp
-usr
-var
-bin
-boot
-dev
-etc
-home
-init
-lib
-lib32
-lib64
-media
-mnt
-opt
-proc
-root
-run
-sbin
-srv
-sys
-tmp
-usr
-var
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-地铁线路图.jpg
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-地铁线路图.jpg
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-地铁线路图.jpg
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-地铁线路图.jpg
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-地铁线路图.jpg
-uid=0(root) gid=0(root) 组=0(root)
-uid=0(root) gid=0(root) 组=0(root)
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-地铁线路图.jpg
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-地铁线路图.jpg
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-地铁线路图.jpg
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-地铁线路图.jpg
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-地铁线路图.jpg
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-地铁线路图.jpg
-uid=0(root) gid=0(root) 组=0(root)
-uid=0(root) gid=0(root) 组=0(root)
-uid=0(root) gid=0(root) 组=0(root)
-爱
-爱
-aixiao
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-uid=0(root) gid=0(root) 组=0(root)
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-牛玉岭.doc
-uid=0(root) gid=0(root) 组=0(root)
-uid=0(root) gid=0(root) 组=0(root)
-uid=0(root) gid=0(root) 组=0(root)
-c
-client.c
-client_help.c
-conf
-config.c
-LICENSE
-log
-Makefile
-pid
-popen.c
-README.md
-s
-server.c
-server_daemon.c
-server_help.c
-VERSION
-牛玉岭.doc
-uid=0(root) gid=0(root) 组=0(root)
-uid=0(root) gid=0(root) 组=0(root)
-c
-client.c
-client_help.c
 client_help.o
 client.o
 conf
-config.c
 LICENSE
 log
 Makefile
@@ -877,186 +14,177 @@ README.md
 s
 server.c
 server_daemon.c
-server_daemon.c.backup
 server_daemon.o
 server_help.c
 server_help.o
 server.o
 VERSION
-sh: 1: lsZ��: not found
+c
+client.c
+client_help.c
+client_help.o
+client.o
+conf
+conf.c
+conf.h
+conf.o
+LICENSE
+log
+Makefile
+pid
+popen.c
+popen.o
+README.md
+s
+server.c
+server_daemon.c
+server_daemon.o
+server.h
+server_help.c
+server_help.o
+server.o
+VERSION
+uid=0(root) gid=0(root) 组=0(root)
+2019年 01月 19日 星期六 22:07:10 DST
+2019年 01月 19日 星期六 22:30:38 DST
+10
+牛玉岭.doc
+c
+client.c
+client_help.c
+client_help.o
+client.o
+conf
+conf.c
+conf.h
+conf.o
+LICENSE
+log
+Makefile
+pid
+popen.c
+popen.o
+README.md
+s
+server.c
+server.c~
+server_daemon.c
+server_daemon.o
+server.h
+server_help.c
+server_help.o
+server.o
+VERSION
+牛玉岭.doc
+c
+client.c
+client_help.c
+client_help.o
+client.o
+conf
+conf.c
+conf.h
+conf.o
+LICENSE
+log
+Makefile
+pid
+popen.c
+popen.o
+README.md
+s
+server.c
+server.c~
+server_daemon.c
+server_daemon.o
+server.h
+server_help.c
+server_help.o
+server.o
+VERSION
 uid=0(root) gid=0(root) 组=0(root)
 uid=0(root) gid=0(root) 组=0(root)
 uid=0(root) gid=0(root) 组=0(root)
 uid=0(root) gid=0(root) 组=0(root)
 uid=0(root) gid=0(root) 组=0(root)
-uid=0(root) gid=0(root) 组=0(root)
-uid=0(root) gid=0(root) 组=0(root)
-uid=0(root) gid=0(root) 组=0(root)
-18年11月25日21时18分13秒 请注意,抽屉已经打开
-18年11月25日21时18分13秒 请注意,抽屉已经打开
-18年11月25日21时18分14秒 请注意,抽屉已经打开
-18年11月25日21时18分14秒 请注意,抽屉已经打开
-18年11月25日21时18分14秒 请注意,抽屉已经打开
-18年11月25日21时18分14秒 请注意,抽屉已经打开
-18年11月25日21时18分14秒 请注意,抽屉已经打开
-18年11月25日22时04分42秒 请注意,抽屉已经打开
-18年11月25日22时05分18秒 请注意,抽屉已经打开
-18年11月25日22时05分28秒 请注意,抽屉已经打开
-18年11月25日22时05分31秒 请注意,抽屉已经打开
-18年11月26日11时44分21秒 请注意,抽屉已经打开
-18年11月26日19时35分31秒 请注意,抽屉已经打开
-18年11月26日19时35分41秒 请注意,抽屉已经打开
-18年11月26日19时35分42秒 请注意,抽屉已经打开
-18年11月26日19时37分47秒 请注意,抽屉已经打开
-18年11月26日19时37分47秒 请注意,抽屉已经打开
-18年11月26日19时37分47秒 请注意,抽屉已经打开
-18年11月26日19时37分48秒 请注意,抽屉已经打开
-18年11月26日19时37分48秒 请注意,抽屉已经打开
-18年11月26日19时37分48秒 请注意,抽屉已经打开
-18年11月26日19时37分49秒 请注意,抽屉已经打开
-18年11月26日19时37分49秒 请注意,抽屉已经打开
-18年11月26日19时37分49秒 请注意,抽屉已经打开
-18年11月26日19时37分49秒 请注意,抽屉已经打开
-18年11月26日19时37分49秒 请注意,抽屉已经打开
-18年11月26日19时37分50秒 请注意,抽屉已经打开
-18年11月26日19时37分50秒 请注意,抽屉已经打开
-18年11月26日19时37分50秒 请注意,抽屉已经打开
-18年11月26日19时37分50秒 请注意,抽屉已经打开
-18年11月26日19时37分50秒 请注意,抽屉已经打开
-18年11月26日19时37分51秒 请注意,抽屉已经打开
-18年11月26日19时37分51秒 请注意,抽屉已经打开
-18年11月26日19时37分51秒 请注意,抽屉已经打开
-18年11月26日19时37分51秒 请注意,抽屉已经打开
-18年11月26日19时37分51秒 请注意,抽屉已经打开
-18年11月26日21时26分37秒 请注意,抽屉已经打开
-18年11月26日21时26分38秒 请注意,抽屉已经打开
-18年11月26日21时43分23秒 请注意,抽屉已经打开
-18年11月26日21时43分25秒 请注意,抽屉已经打开
-18年11月26日21时43分28秒 请注意,抽屉已经打开
-18年11月26日21时43分29秒 请注意,抽屉已经打开
-18年11月26日21时43分30秒 请注意,抽屉已经打开
-18年11月26日23时53分24秒 请注意,抽屉已经打开
-18年11月26日23时56分55秒 请注意,抽屉已经打开
-18年11月26日23时56分55秒 请注意,抽屉已经打开
-18年11月26日23时56分55秒 请注意,抽屉已经打开
-18年11月26日23时56分56秒 请注意,抽屉已经打开
-18年11月26日23时56分56秒 请注意,抽屉已经打开
-18年11月26日23时56分56秒 请注意,抽屉已经打开
-18年11月26日23时56分56秒 请注意,抽屉已经打开
-18年11月26日23时56分56秒 请注意,抽屉已经打开
-18年11月26日23时56分56秒 请注意,抽屉已经打开
-18年11月26日23时56分57秒 请注意,抽屉已经打开
-18年11月26日23时56分57秒 请注意,抽屉已经打开
-18年11月26日23时56分57秒 请注意,抽屉已经打开
-18年11月26日23时56分57秒 请注意,抽屉已经打开
-18年11月26日23时56分57秒 请注意,抽屉已经打开
-18年11月26日23时56分58秒 请注意,抽屉已经打开
-18年11月26日23时56分58秒 请注意,抽屉已经打开
-18年11月26日23时56分58秒 请注意,抽屉已经打开
-18年11月26日23时56分58秒 请注意,抽屉已经打开
-18年11月26日23时56分58秒 请注意,抽屉已经打开
-18年11月26日23时56分58秒 请注意,抽屉已经打开
-18年11月26日23时56分59秒 请注意,抽屉已经打开
-18年11月26日23时56分59秒 请注意,抽屉已经打开
-18年11月26日23时56分59秒 请注意,抽屉已经打开
-18年11月26日23时56分59秒 请注意,抽屉已经打开
-18年11月26日23时57分00秒 请注意,抽屉已经打开
-18年11月26日23时57分00秒 请注意,抽屉已经打开
-18年11月26日23时57分00秒 请注意,抽屉已经打开
-18年11月26日23时57分00秒 请注意,抽屉已经打开
-18年11月26日23时57分00秒 请注意,抽屉已经打开
-18年11月26日23时57分00秒 请注意,抽屉已经打开
-18年11月26日23时57分00秒 请注意,抽屉已经打开
-18年11月26日23时57分01秒 请注意,抽屉已经打开
-18年11月26日23时57分01秒 请注意,抽屉已经打开
-18年11月26日23时57分01秒 请注意,抽屉已经打开
-18年11月26日23时57分01秒 请注意,抽屉已经打开
-18年11月26日23时57分01秒 请注意,抽屉已经打开
-18年11月26日23时57分02秒 请注意,抽屉已经打开
-18年11月26日23时57分02秒 请注意,抽屉已经打开
-18年11月26日23时57分02秒 请注意,抽屉已经打开
-18年11月26日23时57分02秒 请注意,抽屉已经打开
-18年11月26日23时57分02秒 请注意,抽屉已经打开
-18年11月26日23时57分02秒 请注意,抽屉已经打开
-18年11月26日23时57分03秒 请注意,抽屉已经打开
-18年11月26日23时57分03秒 请注意,抽屉已经打开
-18年11月26日23时57分03秒 请注意,抽屉已经打开
-18年11月26日23时57分03秒 请注意,抽屉已经打开
-18年11月26日23时57分03秒 请注意,抽屉已经打开
-18年11月26日23时57分04秒 请注意,抽屉已经打开
-18年11月26日23时57分04秒 请注意,抽屉已经打开
-18年11月27日00时06分12秒 请注意,抽屉已经打开
-18年11月27日00时06分12秒 请注意,抽屉已经打开
-18年11月27日00时06分12秒 请注意,抽屉已经打开
-18年11月27日00时06分12秒 请注意,抽屉已经打开
-18年11月27日00时14分42秒 请注意,抽屉已经打开
-18年11月27日00时14分42秒 请注意,抽屉已经打开
-18年11月27日00时14分43秒 请注意,抽屉已经打开
-18年11月27日00时20分48秒 请注意,抽屉已经打开
-18年11月27日00时20分48秒 请注意,抽屉已经打开
-18年11月27日00时20分48秒 请注意,抽屉已经打开
-18年11月27日00时20分49秒 请注意,抽屉已经打开
-18年11月27日00时20分49秒 请注意,抽屉已经打开
-18年11月27日00时20分49秒 请注意,抽屉已经打开
-18年11月27日00时20分49秒 请注意,抽屉已经打开
-18年11月27日00时20分49秒 请注意,抽屉已经打开
-18年11月27日00时20分49秒 请注意,抽屉已经打开
-18年11月27日00时20分49秒 请注意,抽屉已经打开
-18年11月27日00时20分49秒 请注意,抽屉已经打开
-18年11月27日00时30分51秒 请注意,抽屉已经打开
-18年11月27日00时30分53秒 请注意,抽屉已经打开
-18年11月27日00时30分54秒 请注意,抽屉已经打开
-18年11月27日00时30分56秒 请注意,抽屉已经打开
-18年11月27日00时30分56秒 请注意,抽屉已经打开
-18年11月27日00时30分56秒 请注意,抽屉已经打开
-18年11月27日00时30分56秒 请注意,抽屉已经打开
-18年11月27日00时30分56秒 请注意,抽屉已经打开
-18年11月27日00时30分56秒 请注意,抽屉已经打开
-18年11月27日00时30分56秒 请注意,抽屉已经打开
-18年11月27日00时31分19秒 请注意,抽屉已经打开
-18年11月27日00时31分19秒 请注意,抽屉已经打开
-18年11月27日00时31分21秒 请注意,抽屉已经打开
-18年11月27日00时31分22秒 请注意,抽屉已经打开
-18年11月27日00时31分24秒 请注意,抽屉已经打开
-18年11月27日00时31分27秒 请注意,抽屉已经打开
-18年11月27日00时31分28秒 请注意,抽屉已经打开
-18年11月27日00时31分30秒 请注意,抽屉已经打开
-18年11月27日00时31分31秒 请注意,抽屉已经打开
-18年11月27日00时31分34秒 请注意,抽屉已经打开
-18年11月27日00时31分36秒 请注意,抽屉已经打开
-18年11月27日00时31分37秒 请注意,抽屉已经打开
-18年11月27日00时35分30秒 请注意,抽屉已经打开
-18年11月27日00时35分31秒 请注意,抽屉已经打开
-18年11月27日00时35分33秒 请注意,抽屉已经打开
-18年11月27日00时35分34秒 请注意,抽屉已经打开
-18年11月27日00时35分38秒 请注意,抽屉已经打开
-18年11月27日00时35分39秒 请注意,抽屉已经打开
-18年11月27日00时35分41秒 请注意,抽屉已经打开
-18年11月27日00时35分43秒 请注意,抽屉已经打开
-18年11月27日00时35分44秒 请注意,抽屉已经打开
-18年11月27日00时35分50秒 请注意,抽屉已经打开
-18年11月27日00时35分50秒 请注意,抽屉已经打开
-18年11月27日00时35分51秒 请注意,抽屉已经打开
-18年11月27日00时40分54秒 请注意,抽屉已经打开
-18年11月27日00时40分56秒 请注意,抽屉已经打开
-18年11月27日12时03分48秒 请注意,抽屉已经打开
-18年11月27日12时03分50秒 请注意,抽屉已经打开
-18年11月27日12时07分40秒 请注意,抽屉已经打开
-18年11月27日12时07分44秒 请注意,抽屉已经打开
-18年11月27日12时22分08秒 请注意,抽屉已经打开
-18年11月27日14时33分44秒 请注意,抽屉已经打开
-18年11月27日14时55分26秒 请注意,抽屉已经打开
-18年11月27日14时55分34秒 请注意,抽屉已经打开
-18年11月27日17时12分31秒 请注意,抽屉已经打开
-18年11月27日17时12分39秒 请注意,抽屉已经打开
-18年11月27日17时12分39秒 请注意,抽屉已经打开
-18年11月28日10时44分25秒 请注意,抽屉已经打开
-18年11月28日10时44分26秒 请注意,抽屉已经打开
-18年11月28日10时44分31秒 请注意,抽屉已经打开
-18年11月28日10时44分32秒 请注意,抽屉已经打开
-18年11月28日11时09分19秒 请注意,抽屉已经打开
-18年11月28日11时09分25秒 请注意,抽屉已经打开
-18年11月28日21时09分36秒 请注意,抽屉已经打开
-18年11月28日21时09分38秒 请注意,抽屉已经打开
-18年11月28日21时10分22秒 请注意,抽屉已经打开
-18年11月28日21时10分24秒 请注意,抽屉已经打开
+c
+client.c
+client_help.c
+client_help.o
+client.o
+conf
+conf.c
+conf.h
+conf.o
+LICENSE
+log
+Makefile
+pid
+popen.c
+popen.o
+README.md
+s
+server.c
+server_daemon.c
+server_daemon.o
+server.h
+server_help.c
+server_help.o
+server.o
+VERSION
+地铁线路图.jpg
+模拟浏览器
+牛玉岭.doc
+系统壁纸
+a.c
+android_u2nl
+a.out
+c
+ccfaq
+CPROXY
+CuteBi 0.2
+desktop.ini
+dns.c
+getevent
+index.html.lnk
+iniparser
+inss
+java
+LightControl
+linux_c
+linux_c.html.lnk
+micro_proxy
+mproxy
+QEMU
+raspberrypi
+Shadowsocks.exe - 快捷方式.lnk
+socket-windows
+SpecialProxy
+test
+udp
+udpServer.c
+c
+client.c
+client_help.c
+client_help.o
+client.o
+conf
+conf.c
+conf.h
+conf.o
+LICENSE
+log
+Makefile
+pid
+popen.c
+popen.o
+README.md
+s
+server.c
+server_daemon.c
+server_daemon.o
+server.h
+server_help.c
+server_help.o
+server.o
+VERSION

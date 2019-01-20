@@ -15,10 +15,10 @@ char help(void)
 
     static const char *s_help[] = {
         "",
-        "    -?,-h     : this help",
-        "    -d        : daemon",
-        "    -s        : signal: stop,status",
-        "    -p,       : pid file(default: pid/s.pid)",
+        "    -?,-h      : this help",
+        "    -d         : daemon",
+        "    -s signal  : signal: stop,status",
+        "    -p file    : pid file(default: pid/s.pid)",
         "",
         "",
         0
